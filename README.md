@@ -87,6 +87,13 @@ The following 16 numerical features are used for model training:
 
 ---
 
+## 🌐 Live Demo
+
+The project web interface is available online:
+
+👉 **[Loan Default Risk Prediction – Live Demo](https://starlit-gelato-4ad3c8.netlify.app/)**
+
+The web application allows users to enter the 16 loan and credit features and view a loan default risk prediction. 1
 ## 🔄 Project Workflow
 
 ```text
