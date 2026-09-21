@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Loan Default Risk Prediction</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<main class="page">
+  <script src="script.js"></script>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <div class="brand">
+      🛡️ Loan Default Risk Prediction
+    </div>
+
+    <div class="top-actions">
+      <span>Lending Club</span>
+      <span>•</span>
+      <span>Machine Learning</span>
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div>
+      <p class="eyebrow">BIG DATA • MACHINE LEARNING • CREDIT RISK</p>
+
+      <h1>
+        Loan Default<br>
+        Risk Prediction
+      </h1>
+    </div>
+
+    <p>
+      Enter the financial and credit details of one applicant.
+      The system will predict whether the applicant is likely
+      to default or not default.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN DASHBOARD -->
+  <section class="dashboard">
+
+
+    <!-- INPUT FORM -->
+    <div class="form-card">
+
+      <div class="form-header">
+
+        <div>
+          <h2>Applicant Information</h2>
+
+          <p>
+            Enter the 16 features used by the machine learning model.
+          </p>
+        </div>
+
+        <div class="feature-count">
+          16 FEATURES
+        </div>
+
+      </div>
+
+
+      <form id="riskForm">
+
+
+        <!-- LOAN DETAILS -->
+        <section class="form-section">
+
+          <h2>💰 Loan Details</h2>
+
+          <p class="hint">
+            Information about the requested and funded loan.
+          </p>
+
+          <div class="grid three">
+
+            <label>
+              Loan Amount
+              <span>Amount requested</span>
+              <input
+                name="loan_amnt"
+                type="number"
+                step="0.01"
+                value="20000"
+                required
+              >
+            </label>
+
+
+            <label>
+              Funded Amount
+              <span>Amount actually funded</span>
+              <input
+                name="funded_amnt"
+                type="number"
+                step="0.01"
+                value="20000"
+                required
+              >
+            </label>
+
+
+            <label>
+              Investor Funded Amount
+              <span>Amount funded by investors</span>
+              <input
+                name="funded_amnt_inv"
+                type="number"
+                step="0.01"
+                value="20000"
+                required
+              >
+            </label>
+
+
+            <label>
+              Interest Rate (%)
+              <span>Loan interest rate</span>
+              <input
+                name="int_rate"
+                type="number"
+                step="0.01"
+                value="13.5"
+                required
+              >
+            </label>
+
+
+            <label>
+              Monthly Installment
+              <span>Regular loan payment</span>
+              <input
+                name="installment"
+                type="number"
+                step="0.01"
+                value="500"
+                required
+              >
+            </label>
+
+          </div>
+
+        </section>
+
+
+        <!-- FINANCIAL DETAILS -->
+        <section class="form-section">
+
+          <h2>💵 Income & Debt</h2>
+
+          <p class="hint">
+            Financial information about the applicant.
+          </p>
+
+          <div class="grid three">
+
+            <label>
+              Annual Income
+              <span>Yearly income</span>
+              <input
+                name="annual_inc"
+                type="number"
+                step="0.01"
+                value="50000"
+                required
+              >
+            </label>
+
+
+            <label>
+              Debt-to-Income (%)
+              <span>Debt compared with income</span>
+              <input
+                name="dti"
+                type="number"
+                step="0.01"
+                value="22"
+                required
+              >
+            </label>
+
+
+            <label>
+              Revolving Balance
+              <span>Outstanding revolving credit</span>
+              <input
+                name="revol_bal"
+                type="number"
+                step="0.01"
+                value="9000"
+                required
+              >
+            </label>
+
+
+            <label>
+              Revolving Utilisation (%)
+              <span>Percentage of credit used</span>
+              <input
+                name="revol_util"
+                type="number"
+                step="0.01"
+                value="55"
+                required
+              >
+            </label>
+
+          </div>
+
+        </section>
+
+
+        <!-- CREDIT HISTORY -->
+        <section class="form-section">
+
+          <h2>💳 Credit History</h2>
+
+          <p class="hint">
+            Credit information available at the time of application.
+          </p>
+
+          <div class="grid three">
+
+
+            <label>
+              Delinquencies — 2 Years
+              <span>Late payments</span>
+              <input
+                name="delinq_2yrs"
+                type="number"
+                step="1"
+                value="1"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Credit Enquiries — 6 Months
+              <span>Recent credit enquiries</span>
+              <input
+                name="inq_last_6mths"
+                type="number"
+                step="1"
+                value="2"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Open Accounts
+              <span>Currently open accounts</span>
+              <input
+                name="open_acc"
+                type="number"
+                step="1"
+                value="8"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Total Accounts
+              <span>Total credit accounts</span>
+              <input
+                name="total_acc"
+                type="number"
+                step="1"
+                value="15"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Mortgage Accounts
+              <span>Number of mortgage accounts</span>
+              <input
+                name="mort_acc"
+                type="number"
+                step="1"
+                value="1"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Public Records
+              <span>Public credit records</span>
+              <input
+                name="pub_rec"
+                type="number"
+                step="1"
+                value="0"
+                min="0"
+                required
+              >
+            </label>
+
+
+            <label>
+              Bankruptcies
+              <span>Public bankruptcy records</span>
+              <input
+                name="pub_rec_bankruptcies"
+                type="number"
+                step="1"
+                value="0"
+                min="0"
+                required
+              >
+            </label>
+
+          </div>
+
+        </section>
+
+
+        <!-- PREDICT BUTTON -->
+        <div class="predict-area">
+
+          <button
+            type="submit"
+            id="predictBtn"
+            class="predict-btn"
+          >
+            🔍 Predict Loan Risk
+          </button>
+
+          <p>
+            The model will classify this applicant as
+            <strong>Default (1)</strong> or
+            <strong>Non-default (0)</strong>.
+          </p>
+
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <!-- RESULT CARD -->
+    <aside class="score-card">
+
+      <div class="result-header">
+        <span>MODEL PREDICTION</span>
+        <span class="spark-badge">Spark MLlib</span>
+      </div>
+
+
+      <div
+        id="resultBox"
+        class="result-box low"
+      >
+
+        <div class="result-icon" id="resultIcon">
+          ✓
+        </div>
+
+        <div
+          id="riskLabel"
+          class="risk-label"
+        >
+          Ready
+        </div>
+
+        <div
+          id="predictionValue"
+          class="prediction-value"
+        >
+          —
+        </div>
+
+        <p id="resultText">
+          Enter the applicant information and click
+          <strong>Predict Loan Risk</strong>.
+        </p>
+
+      </div>
+
+
+      <!-- RISK SCORE -->
+      <div class="risk-score">
+
+        <div class="risk-score-title">
+          Estimated Default Risk
+        </div>
+
+        <div
+          id="score"
+          class="score"
+        >
+          —
+        </div>
+
+        <div class="risk-bar">
+
+          <div
+            id="riskBar"
+            class="risk-bar-fill"
+          ></div>
+
+        </div>
+
+        <div class="risk-scale">
+          <span>Low</span>
+          <span>High</span>
+        </div>
+
+      </div>
+
+
+      <!-- INPUT SUMMARY -->
+      <div class="summary">
+
+        <h3>Applicant Summary</h3>
+
+        <div class="summary-row">
+          <span>Loan Amount</span>
+          <strong id="summaryLoan">$20,000</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Annual Income</span>
+          <strong id="summaryIncome">$50,000</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>DTI</span>
+          <strong id="summaryDti">22%</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Interest Rate</span>
+          <strong id="summaryRate">13.5%</strong>
+        </div>
+
+      </div>
+
+
+      <!-- MODEL -->
+      <div class="model-info">
+
+        <h3>About the Model</h3>
+
+        <p>
+          This system uses a Logistic Regression model
+          trained using Spark MLlib on 16 numeric features.
+        </p>
+
+        <div class="model-stats">
+
+          <div>
+            <span>Accuracy</span>
+            <strong>80.20%</strong>
+          </div>
+
+          <div>
+            <span>F1 Score</span>
+            <strong>0.737</strong>
+          </div>
+
+          <div>
+            <span>AUC</span>
+            <strong>0.704</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div>
+      <strong>Loan Default Risk Prediction</strong>
+      <span> • Lending Club Dataset</span>
+    </div>
+
+    <div>
+      Apache Spark • PySpark • Spark MLlib
+    </div>
+
+  </footer>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
